@@ -26,4 +26,33 @@
 - 주의사항
   - 객체에 접근해야하므로 버킷 생성시에 퍼블릭 엑세스 차단을 풀어준다.
   
-  - ✈️ 원격 빌드 관련 설정
+ ✈️ **원격 빌드 관련 설정**
+ 
+ 버킷 경로를 쉽게 접근 가능하도록 정적 클래스를 만들어 주소에 접근하도록 한다.
+ 
+ ```
+ namespace Addressable
+{
+    public static class RemotePath
+    {
+        public static string buketPath = "[BuketPath]";
+    }
+}
+
+ ```
+ `Window - Asset Managemet - Adressable - groups` 에서 기존 그룹이 하나도 없다면 생성하고 새로운 Adressable Profile를 만든다.
+ 이곳의 RemoteLoadPath 만들어준 경로를 참조할 수 있도록 기존 url 부분을 아래와 같이 [Addressable.RemotePath.buketPath]로 변경해준다.
+ 
+![image](https://user-images.githubusercontent.com/46295539/179755837-bd65f744-cff9-4a51-a823-687dfd5b0d5e.png)
+
+그리고 `Assets - AddressableAssetsData` 의 AddressableAssetSettings에서 remote 설정을 진행한다. 
+Build Remote Catalog 설정을 체크해 원격 카탈로그를 생성할 수 있게 하고 패스 경로를 Custom - Remote Path로 변경해준다.
+
+Build Path의 경우 빌드된 에셋이 프로젝트내에 저장되는 경로이고 Load Path는 원격에서 불러오는 경로이다. 
+설정을 진행하고 위에 설정 해두었던 버킷 주소가 잘 들어가있는지 확인해보는 것이 좋다.
+
+![image](https://user-images.githubusercontent.com/46295539/179757149-ea920ab1-a866-4b69-a5b7-80932db53b15.png)
+
+ ✈️ ** 어드레서블 에셋 빌드 및 버킷 업로드**
+ 
+ 에셋을 버킷에 업로드 해준 이후 모두 퍼블릭 설정을 해주어야한다. 퍼블릭 설정을 하지않으면 접근할 수 없고 업데이트 이후에도 퍼블릭 설정을 다시 하지않으면 업데이트 된 내용을 불러올 수 없으니 유의해야한다.
