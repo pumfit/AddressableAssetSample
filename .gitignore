@@ -60,3 +60,5 @@ crashlytics-build.properties
 
 AddressableAssetSample/Logs/
 AddressableAssetSample/Library/
+AddressableAssetSample/Temp/
+AddressableAssetSample/obj/
