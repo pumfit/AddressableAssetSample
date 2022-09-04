@@ -21,10 +21,28 @@
 
 🔗 https://gamedev-resources.com/load-unload-and-change-assets-at-runtime-with-addressables/
 
-## 🚀 Addressable 환경 설정 및 AWS 버킷 설정
+## 🚀 Addressable 환경 설정 및 Firebase 설정
 | Addressable 버전 `1.18.19`
-- 주의사항
-  - 객체에 접근해야하므로 버킷 생성시에 퍼블릭 엑세스 차단을 풀어준다.
+- 참고
+  - 이전에 AWS로 진행하였으나 AWS에서는 에셋 다운로드 URL을 얻기 어려운 반면 firebase는 google cloud storage를 통해 쉽게 다운로드 경로를 얻을 수 있어 firebase로 변경하였다.
+ 
+ 
+ 🔗 참고자료 URL : https://mikecbauervision.medium.com/unity-addressables-firebase-google-cloud-storage-632191b86b9c
+
+### 1. 파이어베이스 유니티 프로젝트에 추가하기
+
+아래 스텝에 따라 유니티 프로젝트에 파이어베이스 설정을 진행한다.
+  
+  🔗 https://firebase.google.com/docs/unity/setup?hl=ko
+  
+    a. 프로젝트에서 유니티를 선택하고 안드로이드 패키지 이름,iOS 번들 이름 등은 유니티 프로젝트의 `Bundle Identifier` 를 넣어 앱등록을 하면된다.
+  
+    b. Firebase SDK는 dotnet4의 FirebaseAnalytics , `FirebaseDatabase` 와 `FirebaseStorage` 를 사용하므로 두 패키지를 import 한다.
+    
+    c. 프로젝트에서 Storage를 생성하고 이때 예제이므로 `테스트 모드`로 버킷을 만든다. (데이터 공개 설정을 위해)
+  
+  
+### 2. 유니티 어드레서블 Remote 설정하기
   
  ✈️ **원격 빌드 관련 설정**
  
@@ -53,6 +71,8 @@ Build Path의 경우 빌드된 에셋이 프로젝트내에 저장되는 경로�
 
 ![image](https://user-images.githubusercontent.com/46295539/179757149-ea920ab1-a866-4b69-a5b7-80932db53b15.png)
 
- ✈️ ** 어드레서블 에셋 빌드 및 버킷 업로드**
+ ✈️ **어드레서블 에셋 빌드 및 버킷 업로드**
  
  에셋을 버킷에 업로드 해준 이후 모두 퍼블릭 설정을 해주어야한다. 퍼블릭 설정을 하지않으면 접근할 수 없고 업데이트 이후에도 퍼블릭 설정을 다시 하지않으면 업데이트 된 내용을 불러올 수 없으니 유의해야한다.
+ 
+
