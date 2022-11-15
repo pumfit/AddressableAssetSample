@@ -75,4 +75,13 @@ Build Path의 경우 빌드된 에셋이 프로젝트내에 저장되는 경로�
  
  에셋을 버킷에 업로드 해준 이후 모두 퍼블릭 설정을 해주어야한다. 퍼블릭 설정을 하지않으면 접근할 수 없고 업데이트 이후에도 퍼블릭 설정을 다시 하지않으면 업데이트 된 내용을 불러올 수 없으니 유의해야한다.
  
+## 🚀 Remote Addressable Asset Build
 
+![image](https://user-images.githubusercontent.com/46295539/201916170-966ba5cd-1063-4dba-b63f-814c77039d96.png)
+
+- Simplify Addressable Names
+- Label (Scene/Prefab)
+
+Play Mode Script - Use ExistingBuild 설정 후 Build를 진행하면 프로젝트 루트 폴더-ServerData - StandaloneWindows64에 빌드된 어드레서블 에셋 파일을 확인할 수 있다.
+
+catalog는 catalog.hash, catalog.json 파일로 구성되어 있고 여러개의 빌드 파일이 나뉘어져서 나오게 된다.
