@@ -17,10 +17,16 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 98c59016041fbf549afcc944bc20dbd2
   m_SerializeEntries:
-  - m_GUID: 133f28e834a431c409eb8ba5319c0a8a
-    m_Address: Assets/Prefabs/Cube.prefab
+  - m_GUID: b2930804c9b22574fbab3cb607dd1090
+    m_Address: RemoteScene
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Scene
+  - m_GUID: 133f28e834a431c409eb8ba5319c0a8a
+    m_Address: Cube
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 4094b47e676a597489b887ea213f59b2, type: 2}
   m_SchemaSet:
