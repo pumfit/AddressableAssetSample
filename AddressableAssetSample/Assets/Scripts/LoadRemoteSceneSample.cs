@@ -30,7 +30,10 @@ public class LoadRemoteSceneSample : MonoBehaviour
 
         while (!isCatalogLoaded)
             yield return null;
+    }
 
+    IEnumerator LoadScene(string sceneKey)
+    {
         this.loadMapOperation = Addressables.LoadSceneAsync(sceneKey);
 
         yield return null;
@@ -45,6 +48,5 @@ public class LoadRemoteSceneSample : MonoBehaviour
 
             yield return null;
         }
-
     }
 }

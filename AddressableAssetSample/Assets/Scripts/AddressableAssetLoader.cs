@@ -1,18 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 public class AddressableAssetLoader : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private async void LoadAsset<T>(string key)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        var op =  Addressables.LoadAssetAsync<T>(key);
     }
 }
